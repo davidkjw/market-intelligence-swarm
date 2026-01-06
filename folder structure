@@ -1,0 +1,16 @@
+# Create the organized structure
+mkdir -p project-flask project-langgraph docs
+mkdir -p project-flask/data_collectors
+
+# Move Flask files into their folder
+mv app.py config.py intelligence_engine.py swarm_orchestrator.py requirements.txt project-flask/
+
+# Create LangGraph files
+cp your-main.py project-langgraph/main.py  # Your existing main.py
+echo "langchain-ollama\nlanggraph\nlangchain-community\nduckduckgo-search" > project-langgraph/requirements.txt
+
+# Create data collector files (these are referenced in swarm_orchestrator.py)
+touch project-flask/data_collectors/__init__.py
+touch project-flask/data_collectors/rss_collector.py
+touch project-flask/data_collectors/financial_collector.py
+touch project-flask/data_collectors/reddit_collector.py

@@ -5,7 +5,7 @@ from langchain_community.tools import DuckDuckGoSearchRun
 from langgraph.graph import StateGraph, START, END
 
 # --- 1. CONFIGURATION ---
-# We use llama3.2 because it is fast for local testing
+# I use llama3.2 because it is fast for local testing
 llm = ChatOllama(model="llama3.2", temperature=0)
 search_tool = DuckDuckGoSearchRun()
 
@@ -54,7 +54,7 @@ def analyst_node(state: SwarmState):
 
 workflow = StateGraph(SwarmState)
 
-# Add our workers
+# Add workers
 workflow.add_node("researcher", researcher_node)
 workflow.add_node("analyst", analyst_node)
 

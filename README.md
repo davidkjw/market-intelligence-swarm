@@ -98,7 +98,7 @@ Beyond simple scraping, production intelligence requires turning "noise" into "d
    pip install -r requirements.txt
    python app.py
 
-   Dashboard available at: http://localhost:5000
+Dashboard available at: http://localhost:5000
 
 3. **Setup the LangGraph System:**
    ```bash

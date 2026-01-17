@@ -33,6 +33,20 @@ The platform operates through two distinct layers to handle both continuous moni
 
 ---
 
+
+## ⚙️ How It Works: The Swarm Logic
+
+
+
+1.  **The Trigger**: A user refresh or a scheduled update activates the `get_intelligence` method.
+2.  **Concurrent Gathering**: The `SwarmOrchestrator` launches asynchronous tasks—the "swarm"—to hit RSS feeds and Reddit endpoints simultaneously.
+3.  **The Brain**: The `IntelligenceEngine` processes the raw text:
+    * **Sentiment Score**: Calculates a "Market Mood" using keyword-matching (e.g., $bullish, $surge, $plunge$).
+    * **Per-Ticker Analysis**: Maps sentiment scores specifically to extracted $TICKER symbols.
+4.  **Synthesis**: The final payload is cached (to prevent API throttling) and rendered via the Flask dashboard using interactive Metric Cards.
+
+---
+
 ## 🌉 Bridging the "PoC-to-Production" Gap
 
 This project distinguishes itself from a typical prototype by addressing the real-world stability and performance challenges required for a production-ready application.
@@ -52,18 +66,6 @@ Beyond simple scraping, production intelligence requires turning "noise" into "d
 
 ---
 
-## ⚙️ How It Works: The Swarm Logic
-
-
-
-1.  **The Trigger**: A user refresh or a scheduled update activates the `get_intelligence` method.
-2.  **Concurrent Gathering**: The `SwarmOrchestrator` launches asynchronous tasks—the "swarm"—to hit RSS feeds and Reddit endpoints simultaneously.
-3.  **The Brain**: The `IntelligenceEngine` processes the raw text:
-    * **Sentiment Score**: Calculates a "Market Mood" using keyword-matching (e.g., $bullish, $surge, $plunge$).
-    * **Per-Ticker Analysis**: Maps sentiment scores specifically to extracted $TICKER symbols.
-4.  **Synthesis**: The final payload is cached (to prevent API throttling) and rendered via the Flask dashboard using interactive Metric Cards.
-
----
 
 ## 🛠️ Tech Stack
 

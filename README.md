@@ -106,3 +106,4 @@ Beyond simple scraping, production intelligence requires turning "noise" into "d
    pip install -r requirements.txt
    python main.py
 
+## ⭐ Love this tool? Give it a star on GitHub! ⭐
